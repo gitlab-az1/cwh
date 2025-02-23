@@ -5,13 +5,7 @@ const nextConfig = {
   poweredByHeader: false,
   
   async redirects() {
-    return [
-      {
-        source: '/login',
-        destination: '/ServiceAuth/identify-yourself',
-        permanent: true,
-      },
-    ];
+    return [ ];
   },
   async rewrites() {
     return [ ];
