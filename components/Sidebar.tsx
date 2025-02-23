@@ -37,6 +37,12 @@ const Sidebar = () => {
       icon: 'home',
       shift: 'label-down',
     },
+    {
+      index: 1,
+      path: '/category',
+      label: 'Categories',
+      icon: 'category',
+    },
   ];
 
   const specificContentPages: [string | RegExp, MenuItem[]][] = [
