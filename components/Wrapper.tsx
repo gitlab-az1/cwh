@@ -15,6 +15,7 @@ const Wrapper = (props: WrapperProps) => {
       <Box className="wrapper">
         {props.children}
       </Box>
+      <div className="global-overlay extends__overlay"></div>
     </>
   );
 };

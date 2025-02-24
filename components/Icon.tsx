@@ -309,7 +309,13 @@ const UNICODE_DICT = {
   institution: '"\\e7ee"',
   history: '"\\e889"',
   'wifi-off': '"\\e648"',
+  'info-log': '"\\ea3e"',
   note: '"\\f1fc"',
+  engineering: '"\\ea3d"',
+  'memory-chip': '"\\f7a3"',
+  'door-open': '"\\e77c"',
+  'user-key': '"\\f87f"',
+  'cell-tower': '"\\ebba"',
 };
 
 const UNICODE_ICON_ALIAS = {};

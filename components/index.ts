@@ -8,3 +8,4 @@ export { default as InputField, type InputFieldProps } from './InputField';
 export { default as Loader, type LoaderProps } from './Loader';
 export { Markdown, type MarkdownProps } from './Markdown';
 export { Redirect, type RedirectOptions } from './Redirect';
+export { default as Wrapper, type WrapperProps } from './Wrapper';

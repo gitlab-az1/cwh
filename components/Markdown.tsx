@@ -1,10 +1,11 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { Box, type SxProps } from '@mui/material';
 import { BlockNoteView } from '@blocknote/mantine';
 import { useCreateBlockNote } from '@blocknote/react';
 
 import '@blocknote/mantine/style.css';
 import '@blocknote/core/fonts/inter.css';
+import { delayed } from '@/utils';
 
 
 export type MarkdownProps = {
@@ -12,6 +13,7 @@ export type MarkdownProps = {
   initialContent?: string;
   disableEmoji?: boolean;
   transparent?: boolean;
+  allowTranslation?: boolean;
   onChange?: (__json: string, __blk: any) => void;
   sx?: SxProps;
 };
@@ -20,6 +22,12 @@ export const Markdown = (props: MarkdownProps) => {
   const editor = useCreateBlockNote({
     initialContent: props.initialContent ? JSON.parse(props.initialContent) : undefined,
   });
+
+  useEffect(() => {
+    delayed(() => {
+      document.querySelector('.ProseMirror[contenteditable]')?.setAttribute('translate', props.allowTranslation ? 'yes' : 'no');
+    });
+  }, [props.allowTranslation]);
 
   return (
     <Box
