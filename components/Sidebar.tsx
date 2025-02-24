@@ -1,7 +1,7 @@
-import React, { memo, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { ssrSafeWindow } from 'typesdk/ssr';
 import { useDispatch, useSelector } from 'react-redux';
+import React, { memo, useEffect, useState } from 'react';
 
 import { cn } from '@/utils';
 import Button from './Button';
@@ -36,9 +36,11 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const { isSidebarOpen } = useSelector<any, AppState>(state => state.appState);
-  const { pathname, push: navigate } = useRouter();
+  const { pathname, push: navigate, asPath } = useRouter();
 
   const isMobile = useMediaQuery('(max-width: 48.25rem)');
+
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
 
 
   const sidebarMenu: MenuItem[] = [
@@ -73,14 +75,14 @@ const Sidebar = () => {
     // [string | regular expression; buttons array list]
     [
       /^\/category(.*)/,
-      (categories.map(item => {
+      categories.map(item => {
         return {
           label: item.name,
           icon: item.icon || 'category',
           color: item.color || undefined,
           path: `/category/${item.publicShortCode}`,
         } satisfies MenuItem;
-      }) as MenuItem[]).sort((a, b) => a.label.localeCompare(b.label)),
+      }),
     ],
   ];
 
@@ -89,14 +91,18 @@ const Sidebar = () => {
     return item[0] === pathname;
   });
 
-  const activeIndex = (useSpecificContent?.[1] || sidebarMenu).findIndex(item => {
-    const currentPath = ssrSafeWindow?.location.pathname.split('?')[0] || '';
+  useEffect(() => {
+    const i = (useSpecificContent?.[1] || sidebarMenu).findIndex(item => {
+      const currentPath = ssrSafeWindow?.location.pathname.split('?')[0] || '';
+      
+      if(item.routerMatch instanceof RegExp) return item.routerMatch.test(currentPath);
+  
+      if(typeof item.path !== 'string') return item.path.pathname === currentPath || item.matchRoutes?.includes(currentPath);
+      return item.path === currentPath || item.matchRoutes?.includes(currentPath);
+    });
     
-    if(item.routerMatch instanceof RegExp) return item.routerMatch.test(currentPath);
-
-    if(typeof item.path !== 'string') return item.path.pathname === currentPath || item.matchRoutes?.includes(currentPath);
-    return item.path === currentPath || item.matchRoutes?.includes(currentPath);
-  });
+    setActiveIndex(i);
+  }, [asPath]);
 
   useEffect(() => {
     document.documentElement.classList[isSidebarOpen ? 'add' : 'remove']('sidebar-expand');

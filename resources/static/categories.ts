@@ -1,5 +1,5 @@
-import { palette } from '@/styles/theme';
 import { FreezableSet } from '../set';
+import { palette } from '@/styles/theme';
 
 
 export interface Category {
@@ -85,7 +85,40 @@ const categories: ReadonlySet<Category> = new FreezableSet([
     color: palette.theme['cyan-dark'].toUpperCase(),
     createdAt: '2025-02-23T23:35:34.454Z',
   },
+  {
+    publicShortCode: 'fs',
+    name: 'Forensics',
+    color: palette.theme['magenta-light'].toUpperCase(),
+    icon: 'mystery',
+    categoryId: 'f858b3b72988',
+    createdAt: '2025-02-24T15:00:38.090Z',
+  },
 ] satisfies Category[]).freeze();
 
 
-export default Object.freeze([ ...categories ]) as readonly Category[];
+export function findCategories(c: string): Category | null;
+export function findCategories(c: string[]): Category[];
+export function findCategories(c: string | string[]): Category | Category[] | null {
+  const s = [ ...categories ];
+
+  if(typeof c === 'string') {
+    const found = s.find(item => {
+      return (
+        item.categoryId === c ||
+        item.publicShortCode.toLowerCase() === c.trim().toLowerCase()
+      );
+    });
+
+    return found || null;
+  }
+
+  return s.filter(item => {
+    return (
+      c.includes(item.categoryId) ||
+      c.map(item => item.toLowerCase().trim()).includes(item.publicShortCode.toLowerCase())
+    );
+  });
+}
+
+
+export default Object.freeze([ ...categories ].sort((a, b) => a.name.localeCompare(b.name))) as readonly Category[];

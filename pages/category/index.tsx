@@ -14,7 +14,7 @@ const Categories = () => {
     <Wrapper>
       <Box
         sx={{
-          margin: '18vw auto 0',
+          margin: '28vh auto 0',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
