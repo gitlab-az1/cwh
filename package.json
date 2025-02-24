@@ -11,9 +11,9 @@
     "spec:no-check": "clear && jest --verbose --runInBand"
   },
   "dependencies": {
-    "@blocknote/core": "0.18.0",
-    "@blocknote/mantine": "0.18.1",
-    "@blocknote/react": "0.18.1",
+    "@blocknote/core": "^0.24.1",
+    "@blocknote/mantine": "^0.24.1",
+    "@blocknote/react": "^0.24.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.5",

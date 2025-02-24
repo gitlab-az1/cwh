@@ -84,10 +84,10 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@blocknote/core@0.18.0", "@blocknote/core@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@blocknote/core/-/core-0.18.0.tgz#090e973813598e8876913c40650b738d70567eed"
-  integrity sha512-U/4Ps6c5waLihGlh27VoGQLJG/zzbOBi2Olzyzlt/1XZDZMJ3zWS1gdicfIgQkQmz/c2BfuKt7T0lCtejmdtSQ==
+"@blocknote/core@^0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@blocknote/core/-/core-0.24.1.tgz#057e3b10bb83e300162eb03a9d933c000b3990bb"
+  integrity sha512-X6eIbIVNP+3mEyDHRhOzbB7RaEkXmqzS5jtkC1P2PXn158ZbyPhvMkpNuTDXvPKkKu1ymDvF2wJZyMUonYK+Jg==
   dependencies:
     "@emoji-mart/data" "^1.2.1"
     "@tiptap/core" "^2.7.1"
@@ -95,7 +95,6 @@
     "@tiptap/extension-code" "^2.7.1"
     "@tiptap/extension-collaboration" "^2.7.1"
     "@tiptap/extension-collaboration-cursor" "^2.7.1"
-    "@tiptap/extension-dropcursor" "^2.7.1"
     "@tiptap/extension-gapcursor" "^2.7.1"
     "@tiptap/extension-hard-break" "^2.7.1"
     "@tiptap/extension-history" "^2.7.1"
@@ -112,12 +111,13 @@
     "@tiptap/pm" "^2.7.1"
     emoji-mart "^5.6.0"
     hast-util-from-dom "^4.2.0"
+    prosemirror-dropcursor "^1.8.1"
     prosemirror-highlight "^0.9.0"
-    prosemirror-model "^1.21.0"
+    prosemirror-model "^1.23.0"
     prosemirror-state "^1.4.3"
     prosemirror-tables "^1.6.1"
-    prosemirror-transform "^1.9.0"
-    prosemirror-view "^1.33.7"
+    prosemirror-transform "^1.10.2"
+    prosemirror-view "^1.38.0"
     rehype-format "^5.0.0"
     rehype-parse "^8.0.4"
     rehype-remark "^9.1.2"
@@ -129,28 +129,28 @@
     shiki "^1.22.0"
     unified "^10.1.2"
     uuid "^8.3.2"
-    y-prosemirror "1.2.12"
+    y-prosemirror "1.2.13"
     y-protocols "^1.0.6"
     yjs "^13.6.15"
 
-"@blocknote/mantine@0.18.1":
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/@blocknote/mantine/-/mantine-0.18.1.tgz#951a5851a49b3c76ab85c301086546c0ecfd76bc"
-  integrity sha512-dz5uyWDHvlNZrR3MffF9fekU7G0zQw/KKMJi6D97GMC45izaPaFvoYKwTrIIR64rQpCd3SnzL+tby4lNKREfrg==
+"@blocknote/mantine@^0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@blocknote/mantine/-/mantine-0.24.1.tgz#235f94963c3d3f7edbbfe66f948481ca0de2dfcd"
+  integrity sha512-USp/w3oYX1rxK9PI9hXdAGr6dMXWhiTWUNvQQHeqjOGrapF5r5046Rt/r6kBoaLrCYJzfOJ+MPiW9ZDoFuA11A==
   dependencies:
-    "@blocknote/core" "^0.18.0"
-    "@blocknote/react" "^0.18.1"
+    "@blocknote/core" "^0.24.1"
+    "@blocknote/react" "^0.24.1"
     "@mantine/core" "^7.10.1"
     "@mantine/hooks" "^7.10.1"
     "@mantine/utils" "^6.0.21"
     react-icons "^5.2.1"
 
-"@blocknote/react@0.18.1", "@blocknote/react@^0.18.1":
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/@blocknote/react/-/react-0.18.1.tgz#57ac2da50bd52cddd2fbe691b2ffb6ef9c4aab65"
-  integrity sha512-Ub0XJe2PbcOnYbtDFT9lNV+kGrPdowhiWlvelYIobTu1Jy7vXCYg8nlCjao4QIdBlf0eVWkCUR1wyUWoxxnx2g==
+"@blocknote/react@^0.24.1":
+  version "0.24.1"
+  resolved "https://registry.yarnpkg.com/@blocknote/react/-/react-0.24.1.tgz#8a0433ff8c40db3ec464ff9d5b93099c884fa3e0"
+  integrity sha512-Bt3NtMQ6dZ/uaNjTj93NgNnQm+aOscFppUjPDX6QyIjETJrdeWRYbcwJMOSjy7m5VmkUVKo9uyoejeXhVGdmqA==
   dependencies:
-    "@blocknote/core" "^0.18.0"
+    "@blocknote/core" "^0.24.1"
     "@floating-ui/react" "^0.26.4"
     "@tiptap/core" "^2.7.1"
     "@tiptap/react" "^2.7.1"
@@ -904,11 +904,6 @@
   version "2.11.5"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-collaboration/-/extension-collaboration-2.11.5.tgz#7edbcf88b3659dfb18c44aa45c50bbbf31ac1405"
   integrity sha512-3tMMq0E+FM3/3YBUMq5rLvks2DC/t1XLH2Kz/VcuVCxqg1Zg5s9nKOl6CcUZ8gbdvZoEd/GYoQyROJ957v9wzw==
-
-"@tiptap/extension-dropcursor@^2.7.1":
-  version "2.11.5"
-  resolved "https://registry.yarnpkg.com/@tiptap/extension-dropcursor/-/extension-dropcursor-2.11.5.tgz#a1d6fad3379551449534bdb8135da2577a8ec8fb"
-  integrity sha512-uIN7L3FU0904ec7FFFbndO7RQE/yiON4VzAMhNn587LFMyWO8US139HXIL4O8dpZeYwYL3d1FnDTflZl6CwLlg==
 
 "@tiptap/extension-floating-menu@^2.11.5":
   version "2.11.5"
@@ -4365,14 +4360,14 @@ prosemirror-trailing-node@^3.0.0:
     "@remirror/core-constants" "3.0.0"
     escape-string-regexp "^4.0.0"
 
-prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transform@^1.10.2, prosemirror-transform@^1.7.3, prosemirror-transform@^1.9.0:
+prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0, prosemirror-transform@^1.10.2, prosemirror-transform@^1.7.3:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/prosemirror-transform/-/prosemirror-transform-1.10.2.tgz#8ebac4e305b586cd96595aa028118c9191bbf052"
   integrity sha512-2iUq0wv2iRoJO/zj5mv8uDUriOHWzXRnOTVgCzSXnktS/2iQRa3UUQwVlkBlYZFtygw6Nh1+X4mGqoYBINn5KQ==
   dependencies:
     prosemirror-model "^1.21.0"
 
-prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.27.0, prosemirror-view@^1.31.0, prosemirror-view@^1.33.7, prosemirror-view@^1.37.0, prosemirror-view@^1.37.2:
+prosemirror-view@^1.0.0, prosemirror-view@^1.1.0, prosemirror-view@^1.27.0, prosemirror-view@^1.31.0, prosemirror-view@^1.37.0, prosemirror-view@^1.37.2, prosemirror-view@^1.38.0:
   version "1.38.0"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.38.0.tgz#685a256adc8486ebd0c8652125812b2f8297a2d3"
   integrity sha512-O45kxXQTaP9wPdXhp8TKqCR+/unS/gnfg9Q93svQcB3j0mlp2XSPAmsPefxHADwzC+fbNS404jqRxm3UQaGvgw==
@@ -5642,10 +5637,10 @@ xtend@^4.0.0:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
-y-prosemirror@1.2.12:
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/y-prosemirror/-/y-prosemirror-1.2.12.tgz#3bb3bd9def611a90e8b7ac6a7e46a6230f238746"
-  integrity sha512-UMnUIR5ppVn30n2kzeeBQEaesWGe4fsbnlch1HnNa3/snJMoOn7M7dieuS+o1OQwKs1dqx2eT3gFfGF2aOaQdw==
+y-prosemirror@1.2.13:
+  version "1.2.13"
+  resolved "https://registry.yarnpkg.com/y-prosemirror/-/y-prosemirror-1.2.13.tgz#1355c82474e66e4fb9644ed0104cf0af5a9766b1"
+  integrity sha512-eW5/rJcYhqlrqyPLTaGIaPSt7YS6f2wwbV5wXlUkY8rERY0tSJPoumsPD7UWwtXk9C5TdTsvwaIrdOoD1QLbYA==
   dependencies:
     lib0 "^0.2.42"
 
