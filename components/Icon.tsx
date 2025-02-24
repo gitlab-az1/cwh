@@ -317,7 +317,6 @@ const UNICODE_DICT = {
   'user-key': '"\\f87f"',
   'cell-tower': '"\\ebba"',
   blur: '"\\e3a5"',
-  mystery: '"\\f5e1"',
 };
 
 const UNICODE_ICON_ALIAS = {};
