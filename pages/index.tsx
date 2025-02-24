@@ -11,21 +11,7 @@ const App = () => {
 
   return (
     <Wrapper>
-      {/*<Markdown
-        transparent
-        allowTranslation
-        contentEditable={false}
-        initialContent={HOME_PAGE}
-        sx={{
-          maxWidth: '900px',
-          margin: '0 auto',
-          padding: '1rem 1.1rem 4rem',
-
-          '&, & > *, & > * *': {
-            userSelect: 'text !important',
-          },
-        }}
-      />*/}
+      
     </Wrapper>
   );
 };
